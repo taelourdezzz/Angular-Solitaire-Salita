@@ -1,0 +1,18 @@
+#template {
+    max-width: 800px;
+    margin: auto;
+}
+
+#timer {
+    float: left;
+    margin-left: 5%;
+}
+
+#restart {
+    float: right;
+    margin-right: 5%;
+}
+
+h1 {
+    display: block;
+}

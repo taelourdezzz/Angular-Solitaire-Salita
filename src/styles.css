@@ -1,13 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
-body {
-    font-family: 'Courier New', Courier, monospace;
-    color: white;
+body {font-family: 'Nanum Gothic', sans-serif;
+	padding: 0px;
+	background-color: rgb(245,241,222);
+	text-align: center;
+	color: white;
     background-image: url(../src/assets/Images/background.jpg);
-    background-size: cover;
+	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-attachment: fixed;
-	margin: 0px;
+    
 }
 
 h1 {
