@@ -1,7 +1,6 @@
 #deck div {
     height: 100%;
     background-color: aliceblue;
-    display: inline-block;
     margin: .5vw;
     float: left;
 }
