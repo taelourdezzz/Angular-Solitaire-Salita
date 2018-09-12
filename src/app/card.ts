@@ -1,8 +1,6 @@
-import { Url } from "url";
-
 export class Card {
-    id: string;
-    picture: Url;
-    color: boolean;
-    value: number;
-  }
+  id: string;
+  color: string;
+  value: number;
+  suit: string;
+}
