@@ -1,16 +1,15 @@
-#template {
-    max-width: 800px;
-    margin: auto;
-}
-
 #timer {
     float: left;
     margin-left: 5%;
+    background-color: black;
+    display: block;
 }
 
 #restart {
     float: right;
     margin-right: 5%;
+    background-color: black;
+    display: block;
 }
 
 h1 {

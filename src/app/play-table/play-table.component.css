@@ -1,0 +1,44 @@
+#deck div {
+    height: 100%;
+    background-color: aliceblue;
+    display: inline-block;
+    margin: .5vw;
+    float: left;
+}
+#foundation {
+    height: 100%;
+    float: right;
+    width: 60%;
+}
+
+#deck {
+    height: 100%;
+    float: left;
+    width: 40%;
+}
+#foundation div{
+    background-color: antiquewhite;
+    display: inline-block;
+    margin-left: 1vw;
+}
+
+#tableau div{
+    background-color: aqua;
+    display: inline-block;
+    margin: .5vw;
+}
+.slot {
+    height: 140px;
+    width: 93.8px;
+}
+
+#top {
+    margin: 2%;
+    width: 96%;
+    height: 140px;
+}
+
+#tableau {
+    height: 140px;
+    width: 100%;
+}
