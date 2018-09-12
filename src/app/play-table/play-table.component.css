@@ -1,7 +1,7 @@
 #deck div {
     height: 100%;
     background-color: aliceblue;
-    margin: .5vw;
+    margin-right: 1vw;
     float: left;
 }
 #foundation {
