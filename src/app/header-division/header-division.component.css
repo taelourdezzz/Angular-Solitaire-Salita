@@ -1,17 +1,25 @@
 #timer {
     float: left;
     margin-left: 5%;
-    background-color: black;
     display: block;
 }
 
 #restart {
     float: right;
     margin-right: 5%;
-    background-color: black;
     display: block;
+    height: 75px;
+    width: 75px;
+    font-size: 1.5vh;
+    line-height: 75px;
+    background-image: url(../../../src/assets/Images/restart.png);
+	background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border: 1px solid white;
+    border-radius: 50%;
 }
 
 h1 {
     display: block;
+    margin-bottom: 2vh;
 }

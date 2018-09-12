@@ -1,9 +1,16 @@
 #deck div {
     height: 100%;
-    background-color: aliceblue;
     margin-right: 1vw;
     float: left;
 }
+
+#talon {
+    background-image: url(../../../src/assets/Images/refill.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 #foundation {
     height: 100%;
     float: right;
@@ -15,20 +22,24 @@
     float: left;
     width: 40%;
 }
+
 #foundation div{
-    background-color: antiquewhite;
     display: inline-block;
     margin-left: 1vw;
+    background-size: 50% 38%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 #tableau div{
-    background-color: aqua;
     display: inline-block;
     margin: .5vw;
 }
+
 .slot {
     height: 140px;
     width: 93.8px;
+    outline: 3px solid lightgray;
 }
 
 #top {
@@ -40,4 +51,20 @@
 #tableau {
     height: 140px;
     width: 100%;
+}
+
+#diamond {
+    background-image: url(../../../src/assets/Images/diamond.png);
+}
+
+#heart {
+    background-image: url(../../../src/assets/Images/heart.png);
+}
+
+#spade {
+    background-image: url(../../../src/assets/Images/spade.png);
+}
+
+#club {
+    background-image: url(../../../src/assets/Images/club.png);
 }
