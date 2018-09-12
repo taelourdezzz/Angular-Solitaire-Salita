@@ -11,14 +11,19 @@ import { NgStyle } from '@angular/common';
 
 export class CardComponent implements OnInit {
   
-  cards = DECK;
-  card : Card;
+  cards = DECK; 
   
   constructor() { }
 
   ngOnInit() {
-    let card: any = this.cards;
-    console.log(card);
+
   }
 
+  onCreate(card: Card) {
+    return "url(../../../src/assets/Images/b.png)"
+  }
+
+  addClass(card: Card){
+    return "card facedown " + card.id;
+  }
 }

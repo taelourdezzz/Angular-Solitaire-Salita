@@ -1,1 +1,4 @@
-<div *ngFor ="let card of cards">{{card.id}}</div>
+<div *ngFor ="let card of cards" 
+    [ngStyle]="{'background-image': onCreate(card)}"
+    [ngClass]="addClass(card)"    
+></div>

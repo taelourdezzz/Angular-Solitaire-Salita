@@ -1,7 +1,16 @@
-div {
+.card {
     height: 140px;
     width: 93.8px;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    background-color: white;
+    outline: 3px solid black;
+    float: left;
+    position: absolute;
+}
+
+#generateddeck {
+    height: 100%;
+    width: 100%;
 }
