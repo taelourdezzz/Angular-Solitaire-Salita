@@ -13,4 +13,7 @@ export class HeaderDivisionComponent implements OnInit {
   ngOnInit() {
   }
 
+  onClick(){
+    window.location.reload();
+  }
 }

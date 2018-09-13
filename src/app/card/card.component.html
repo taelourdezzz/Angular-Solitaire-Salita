@@ -1,4 +1,5 @@
-<div *ngFor ="let card of shuffledCards" 
+<div *ngFor ="let card of shuffledCards"
     [ngStyle]="{'background-image': onCreate(card)}"
-    [ngClass]="addClass(card)"    
+    [ngClass]="addClass(card)"
+    (dragstart)="moveCard($event)"
 ></div>

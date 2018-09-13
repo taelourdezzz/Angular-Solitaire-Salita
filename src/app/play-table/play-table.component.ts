@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Card } from '../card';
+import { MovementService } from '../movement.service';
+
 @Component({
   selector: 'app-play-table',
   templateUrl: './play-table.component.html',
@@ -7,10 +9,22 @@ import { Card } from '../card';
 })
 export class PlayTableComponent implements OnInit {
   
-  constructor() { }
+  constructor(private movementService: MovementService) { }
 
   ngOnInit() {
 
   }
   
+  allowDrop(data) {
+    data.preventDefault();
+  }
+
+  dropHere(data){ 
+    this.movementService.dropCard(data);
+  }
+
+  liftCard(data){
+    this.movementService.liftCard(data);
+  }
+
 }

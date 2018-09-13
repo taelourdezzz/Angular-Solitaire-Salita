@@ -6,10 +6,18 @@
         <div id="waste" class="slot"></div>
     </div>
     <div id="foundation">
-        <div id="diamond" class="slot"></div>
-        <div id="heart" class="slot"></div>
-        <div id="spade" class="slot"></div>
-        <div id="club" class="slot"></div>
+        <div id="diamond" class="slot"
+            (dragover)="allowDrop($event)"
+            (drop)="dropHere($event)"></div>
+        <div id="heart" class="slot"
+            (dragover)="allowDrop($event)"
+            (drop)="dropHere($event)"></div>
+        <div id="spade" class="slot"
+            (dragover)="allowDrop($event)"
+            (drop)="dropHere($event)"></div>
+        <div id="club" class="slot"
+            (dragover)="allowDrop($event)"
+            (drop)="dropHere($event)"></div>
     </div>
 </div>
 <div id="tableau" >
