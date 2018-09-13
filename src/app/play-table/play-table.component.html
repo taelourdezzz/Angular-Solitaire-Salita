@@ -21,11 +21,25 @@
     </div>
 </div>
 <div id="tableau" >
-    <div id="col1" class="slot"></div>
-    <div id="col2" class="slot"></div>
-    <div id="col3" class="slot"></div>
-    <div id="col4" class="slot"></div>
-    <div id="col5" class="slot"></div>
-    <div id="col6" class="slot"></div>
-    <div id="col7" class="slot"></div>
+    <div id="col1" class="slot"
+    (dragover)="allowDrop($event)"
+    (drop)="dropHere($event)"></div>
+    <div id="col2" class="slot"
+    (dragover)="allowDrop($event)"
+    (drop)="dropHere($event)"></div>
+    <div id="col3" class="slot"
+    (dragover)="allowDrop($event)"
+    (drop)="dropHere($event)"></div>
+    <div id="col4" class="slot"
+    (dragover)="allowDrop($event)"
+    (drop)="dropHere($event)"></div>
+    <div id="col5" class="slot"
+    (dragover)="allowDrop($event)"
+    (drop)="dropHere($event)"></div>
+    <div id="col6" class="slot"
+    (dragover)="allowDrop($event)"
+    (drop)="dropHere($event)"></div>
+    <div id="col7" class="slot"
+    (dragover)="allowDrop($event)"
+    (drop)="dropHere($event)"></div>
 </div>

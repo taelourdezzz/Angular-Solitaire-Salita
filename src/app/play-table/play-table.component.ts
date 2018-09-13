@@ -14,7 +14,7 @@ export class PlayTableComponent implements OnInit {
   ngOnInit() {
 
   }
-  
+
   allowDrop(data) {
     data.preventDefault();
   }

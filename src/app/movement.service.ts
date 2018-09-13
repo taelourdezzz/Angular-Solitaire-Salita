@@ -27,10 +27,29 @@ export class MovementService {
   }
 
   moveCard(card, target){
-    card.style.marginTop="0px";
     var location = card.parentElement;
-    target.appendChild(card);
-    this.makeLiftableCard(location.lastChild);
+    if(target.parentElement.id=="foundation" && card == location.lastChild){
+      card.style.marginTop="0px";
+      target.appendChild(card);
+      this.makeLiftableCard(location.lastChild);
+    }else if(target.parentElement.id=="tableau" && target != location){
+      var nxt = card.nextSibling;
+      if(nxt != null){
+        var last = card.previousSibling;
+        console.log(last);
+        while(card != last){
+          var margin = target.childElementCount;
+          card.style.marginTop= (20*margin) + "px";
+          target.appendChild(card);
+          card = location.lastChild;
+        }
+      }else{
+        var margin = target.childElementCount;
+        card.style.marginTop= (20*margin) + "px";
+        target.appendChild(card);
+      }
+      this.makeLiftableCard(location.lastChild);
+    }
   }
 
   makeLiftableCard(card){
