@@ -23,7 +23,7 @@ export class MoveValidationService {
     }
     if(destination.childElementCount == 0 && cardVal == 13){
       return true;
-    }else{
+    }else if(destination.childElementCount > 0){
       var lastCard = destination.lastElementChild;
       var lastChildVal = 0;
       var lastChildColor: string;
@@ -47,7 +47,6 @@ export class MoveValidationService {
       if(thisCard.id == cardId){ 
         cardVal = thisCard.value;
         cardSuit = thisCard.suit;
-        console.log(dest + " " + cardSuit);
       }
     }
     if(destination.childElementCount == 0 && cardVal == 1
@@ -57,10 +56,12 @@ export class MoveValidationService {
       var lastCard = destination.lastElementChild;
       var lastChildVal = 0;
       var lastChildSuit: string;
-      for(let thisCard of this.deck){
-        if(thisCard.id == lastCard.id){ 
-          lastChildVal = thisCard.value;
-          lastChildSuit = thisCard.suit;
+      if(lastCard != null){
+        for(let thisCard of this.deck){
+          if(thisCard.id == lastCard.id){ 
+            lastChildVal = thisCard.value;
+            lastChildSuit = thisCard.suit;
+          }
         }
       }
       if(cardSuit == lastChildSuit && cardVal - lastChildVal == 1){ return true}

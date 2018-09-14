@@ -18,36 +18,62 @@ export class MovementService {
     if(tclass[0] != "slot"){
       target=target.parentElement;
       this.moveCard(card, target);
-    }
-    else{
+    }else if(card.parentElement.id == "waste"){
+      if(card == card.parentElement.lastChild){
+        this.moveCard(card, target);
+      }
+    }else{
       this.moveCard(card, target);
+    }
+  }
+
+  countCards(){
+    var foundation = Array.from(document.getElementById("foundation").children);
+    var total = 0;
+    for(let column of foundation){
+      total += column.childElementCount;
+    }
+    if(total == 52){
+      alert("You Win!");
     }
   }
 
   moveCard(card, target){
     var location = card.parentElement;
+    var moved: boolean = false;
     if(target.parentElement.id=="foundation" && card == location.lastChild
       && this.moveValidationService.checkFoundationMove(card.id, target.id)){
-      card.style.marginTop="0px";
+      card.style.margin="0px";
       target.appendChild(card);
-      this.makeLiftableCard(location.lastChild);
+      moved = true;
+      this.countCards();
     }else if(target.parentElement.id=="tableau" && target != location 
       && this.moveValidationService.checkTableauMove(card.id, target.id)){
       var nxt = card.nextSibling;
+      var margin = target.childElementCount;
       if(nxt != null){
-        var last = card.previousSibling;
-        console.log(last);
-        while(card != last){
-          var margin = target.childElementCount;
+        while(card != null){
+          card.classList.add("move");
+          card.style.marginLeft = "0px";
           card.style.marginTop= (20*margin) + "px";
-          target.appendChild(card);
-          card = location.lastChild;
+          card = card.nextSibling;
+          margin += 1;
+        }
+        var movingCards = Array.from(document.getElementsByClassName("move"));
+        for(let thiscard of movingCards){
+          target.appendChild(thiscard);
+          thiscard.classList.remove("move");
         }
       }else{
         var margin = target.childElementCount;
+        card.style.marginLeft = "0px";
         card.style.marginTop= (20*margin) + "px";
         target.appendChild(card);
       }
+      moved = true;
+    }
+    if(location.parentElement.id == "tableau" 
+        && location.childElementCount !=0 && moved){
       this.makeLiftableCard(location.lastChild);
     }
   }

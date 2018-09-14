@@ -10,6 +10,7 @@
     background-repeat: no-repeat;
     background-position: center;
     outline: 0;
+    cursor: pointer;
 }
 
 #foundation {

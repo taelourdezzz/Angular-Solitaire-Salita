@@ -29,6 +29,7 @@ export class DistributeService {
         movingcard.style.marginTop = margin + "px";
         movingcard.setAttribute('id',movingcard.classList[2]);
         if(i == j){
+          movingcard.classList.remove("facedown");
           this.movementService.makeLiftableCard(movingcard);
         }
         margin = 0;
