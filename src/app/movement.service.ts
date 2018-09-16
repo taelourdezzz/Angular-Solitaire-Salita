@@ -34,7 +34,8 @@ export class MovementService {
       total += column.childElementCount;
     }
     if(total == 52){
-      alert("You Win!");
+      var win = document.getElementById("cover");
+      win.style.display = "block";
     }
   }
 

@@ -18,7 +18,7 @@ export class CardComponent implements OnInit {
     private distributeService: DistributeService) { }
 
   shuffleCards(cards){
-    //this.shuffledCards = this.shuffleService.shuffle(cards);
+    // this.shuffledCards = this.shuffleService.shuffle(cards);
     return this.shuffledCards = cards;
   }
 

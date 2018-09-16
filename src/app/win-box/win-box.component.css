@@ -1,0 +1,46 @@
+#mainsplash {
+    height: 200px;
+    width: 40vw;
+    background-color: white;
+    outline: 3px solid white;
+    border: 2px solid black;
+    z-index: inherit;
+    display: block;
+    margin-top: 30vh;
+    margin-left: 30vw;
+}
+
+#button {
+    height: 50px;
+    width: 200px;
+    background-color: black;
+    outline: 3px solid black;
+    border: 1px solid white;
+    z-index: 6000;
+    text-align: center;
+    margin: auto;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+span {
+    display: block;
+    padding-top: 13px;
+    margin: auto;
+}
+
+h1{
+    color: black;
+    font-size: 50px;
+    margin: auto;
+    margin-top: 35px;
+}
+
+#cover {
+    height: 97vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    z-index: 4000;
+    display: none;
+}
