@@ -84,6 +84,7 @@ export class MovementService {
     card.style.backgroundImage = "url(../../../src/assets/Images/" + 
       card.classList[1]+".png)";
     card.setAttribute('draggable', 'true');
+    var thiscard = document.getElementById(card.id);
   }
 
   makeUnliftableCard(card){

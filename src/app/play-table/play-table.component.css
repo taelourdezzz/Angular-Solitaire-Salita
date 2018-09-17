@@ -70,3 +70,15 @@
 #club {
     background-image: url(../../../src/assets/Images/club.png);
 }
+
+@media screen and (max-width: 800px){
+    .slot {
+        height: 16.42vw;
+		width: 11vw;
+    }
+
+    #top {
+        margin-top: 8vh;
+        height: 16.42vw;
+    }
+}

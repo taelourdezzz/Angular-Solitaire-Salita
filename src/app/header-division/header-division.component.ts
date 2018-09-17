@@ -14,6 +14,6 @@ export class HeaderDivisionComponent implements OnInit {
   }
 
   onClick(){
-    window.location.reload();
+    document.location.reload();
   }
 }

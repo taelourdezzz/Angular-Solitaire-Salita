@@ -15,6 +15,6 @@ export class WinBoxComponent implements OnInit {
   closeThis(){
     var splash = document.getElementById("cover");
     splash.style.display = "none";
-    window.location.reload();
+    document.location.reload();
   }
 }
