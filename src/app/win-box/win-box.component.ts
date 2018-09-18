@@ -13,7 +13,7 @@ export class WinBoxComponent implements OnInit {
   }
 
   closeThis(){
-    var splash = document.getElementById("cover");
+    let splash = document.getElementById("cover");
     splash.style.display = "none";
     document.location.reload();
   }
