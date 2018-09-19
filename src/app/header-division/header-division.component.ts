@@ -18,6 +18,7 @@ export class HeaderDivisionComponent implements OnInit {
 
   onClick(){
     window.location.reload();
+<<<<<<< HEAD
   }
   
   onClickUndo(){
@@ -74,5 +75,7 @@ export class HeaderDivisionComponent implements OnInit {
       }
     }
     console.log(this.moveLogsService.displayLog());
+=======
+>>>>>>> parent of 01bcbda... Final Commit Before Checking
   }
 }
