@@ -14,10 +14,3 @@
     height: 100%;
     width: 100%;
 }
-
-@media screen and (max-width: 800px){
-    .card {
-        height: 16.42vw;
-		width: 11vw;
-    }
-}
