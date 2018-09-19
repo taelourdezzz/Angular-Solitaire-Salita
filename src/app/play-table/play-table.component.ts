@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Card } from '../card';
 import { MovementService } from '../movement.service';
-
+import { MoveLogsService } from '../move-logs.service';
 @Component({
   selector: 'app-play-table',
   templateUrl: './play-table.component.html',
@@ -9,7 +9,8 @@ import { MovementService } from '../movement.service';
 })
 export class PlayTableComponent implements OnInit {
   
-  constructor(private movementService: MovementService) { }
+  constructor(private movementService: MovementService,
+    private moveLogsService: MoveLogsService) { }
 
   ngOnInit() {
 
@@ -33,12 +34,15 @@ export class PlayTableComponent implements OnInit {
     var waste = document.getElementById("waste");
     if(cards.childElementCount != 0){
       var y = 3;
+      var movingCardsId: string[] = [];
       if(cards.childElementCount < 3){ y = cards.childElementCount}
       for(var x = 0; x < y; x++){
         this.movementService.makeLiftableCard(cards.lastChild);
         cards.lastElementChild.setAttribute('id',cards.lastElementChild.classList[1]);
         waste.appendChild(cards.lastChild);
+        movingCardsId.push(waste.lastElementChild.id);
       }
+      this.moveLogsService.logMoveStack(waste.id, movingCardsId, cards.parentElement.id);
     }else{
       if(waste.childElementCount > 0){
         while(waste.childElementCount != 0){
@@ -47,6 +51,7 @@ export class PlayTableComponent implements OnInit {
           lastWaste.style.margin = "0px";
           cards.appendChild(lastWaste);
         }
+        this.moveLogsService.logReshuffle();
       }
     }
     this.displayWaste();
@@ -60,6 +65,7 @@ export class PlayTableComponent implements OnInit {
     var waste = document.getElementById("waste");
     var waste2 = Array.from(document.getElementById("waste").children);
     for(let card of waste2){
+      card.setAttribute('draggable','false');
       this.revertState(card);
     }
     if(waste.childElementCount > 0){
@@ -68,13 +74,10 @@ export class PlayTableComponent implements OnInit {
       if(waste.childElementCount >= 3){
        var semi_displayed: any = usable.previousSibling;
        var peeking: any = semi_displayed.previousSibling;
-       semi_displayed.setAttribute('draggable','false');
-       peeking.setAttribute('draggable','false');
        usable.style.marginLeft = "40px";
        semi_displayed.style.marginLeft = "20px";
       }else if(waste.childElementCount == 2){
        var semi_displayed: any = usable.previousSibling;
-       semi_displayed.setAttribute('draggable','false');
        usable.style.marginLeft = "20px";
       }
     }

@@ -9,18 +9,18 @@ export class MoveLogsService {
 
   constructor() { }
 
-  logMove(location, card, destination, prevCard){
-    let log: string = location + "|" + card + "|" + destination + "|" + prevCard;
+  logMove(location, card, destination){
+    let log: string = location + "|" + card + "|" + destination;
     this.moveLogs.push(log);
     this.displayLog();
   }
 
-  logMoveStack(location, cards: string[], destination, prevCard){
+  logMoveStack(location, cards: string[], destination){
     let cardString: string = "";
     for(let card of cards){
       cardString = cardString + card + ",";
     }
-    let log: string = location + "|" + cardString + "|" + destination + "|" + prevCard;
+    let log: string = location + "|" + cardString + "|" + destination;
     this.moveLogs.push(log);
     this.displayLog();
   }

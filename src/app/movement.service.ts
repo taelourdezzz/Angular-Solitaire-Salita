@@ -2,13 +2,15 @@ import { Injectable } from '@angular/core';
 import { Card } from './card';
 import { DECK } from './card-data-set';
 import { MoveValidationService } from './move-validation.service';
+import { MoveLogsService } from './move-logs.service';
 @Injectable({
   providedIn: 'root'
 })
 export class MovementService {
 
   deck = DECK;
-  constructor(private moveValidationService: MoveValidationService) { }
+  constructor(private moveValidationService: MoveValidationService,
+    private moveLogsService: MoveLogsService) { }
 
   dropCard(data){
     var cardId = data.dataTransfer.getData("text");
@@ -47,12 +49,13 @@ export class MovementService {
       card.style.margin="0px";
       target.appendChild(card);
       moved = true;
+      this.moveLogsService.logMove(target.id, card.id, location.id);
       this.countCards();
     }else if(target.parentElement.id=="tableau" && target != location 
       && this.moveValidationService.checkTableauMove(card.id, target.id)){
       var nxt = card.nextSibling;
       var margin = target.childElementCount;
-      if(nxt != null){
+      if(nxt != null && (card.parentElement.id != "waste")){
         while(card != null){
           card.classList.add("move");
           card.style.marginLeft = "0px";
@@ -61,15 +64,21 @@ export class MovementService {
           margin += 1;
         }
         var movingCards = Array.from(document.getElementsByClassName("move"));
+        var movingCardsId: string[] = [];
         for(let thiscard of movingCards){
           target.appendChild(thiscard);
+          movingCardsId.push(thiscard.id);
           thiscard.classList.remove("move");
         }
+        this.moveLogsService.logMoveStack(target.id, movingCardsId, location.id);
       }else{
-        var margin = target.childElementCount;
-        card.style.marginLeft = "0px";
-        card.style.marginTop= (20*margin) + "px";
-        target.appendChild(card);
+        if(card == card.parentElement.lastChild){
+          var margin = target.childElementCount;
+          card.style.marginLeft = "0px";
+          card.style.marginTop= (20*margin) + "px";
+          target.appendChild(card);
+          this.moveLogsService.logMove(target.id, card.id, location.id);
+        }
       }
       moved = true;
     }
