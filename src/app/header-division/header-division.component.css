@@ -20,22 +20,6 @@
     cursor: pointer;
 }
 
-#undo {
-    float: left;
-    margin-left: 5%;
-    display: block;
-    height: 75px;
-    width: 75px;
-    font-size: 3vh;
-    line-height: 75px;
-    background-color: black;
-	background-repeat: no-repeat;
-    background-size: 100% 100%;
-    border: 1px solid white;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
 h1 {
     display: block;
     margin-bottom: 2vh;
