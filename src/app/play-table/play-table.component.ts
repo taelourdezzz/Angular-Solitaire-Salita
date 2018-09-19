@@ -42,7 +42,7 @@ export class PlayTableComponent implements OnInit {
         movingCardsId.push(cards.lastElementChild.id);
         waste.appendChild(cards.lastChild);
       }
-      this.moveLogsService.logMoveStack(cards.parentElement.id ,movingCardsId,waste.id);
+
     }else{
       if(waste.childElementCount > 0){
         while(waste.childElementCount != 0){

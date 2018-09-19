@@ -106,13 +106,6 @@ export class MovementService {
     card.style.backgroundImage = "url(../../../src/assets/Images/" + 
       card.classList[1]+".png)";
     card.setAttribute('draggable', 'true');
-<<<<<<< HEAD
-<<<<<<< HEAD
-    let thiscard = document.getElementById(card.id);
-=======
->>>>>>> parent of 01bcbda... Final Commit Before Checking
-=======
->>>>>>> parent of 01bcbda... Final Commit Before Checking
   }
 
   makeUnliftableCard(card){
